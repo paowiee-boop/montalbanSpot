@@ -52,10 +52,16 @@
     
             // Image Cycling Logic
             const images = [
-                "../images/wawa1.jpg",
+                "../images/balagbag.jpg",
                 "../images/avilon.jpg",
-                "../images/balagbag.jpg"
+                "../images/wawa1.jpg"
             ];
+            const pages = [
+                "../html/balagbag.html",      // Redirect when image is wawa1.jpg
+                "../html/avilon.html",    // Redirect when image is avilon.jpg
+                "../html/wawa.html"   // Redirect when image is balagbag.jpg
+            ];
+            
             let currentIndex = 0;
     
             const imageElement = document.querySelector(".balagbag img");
@@ -79,8 +85,15 @@
                     flashBackground.style.zIndex = "-1"; // Put it back behind content
                 }, 1000);
             });
+    
+            // Add click event to the image to navigate
+            imageElement.addEventListener("click", function() {
+                window.location.href = pages[currentIndex]; // Navigate based on the current image
+            });
+    
         });
     </script>
+    
     
     
 </body>
