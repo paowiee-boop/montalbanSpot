@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Home Page</title>
+    <!-- Link to the CSS -->
+    <link rel="stylesheet" href="../css/cssHome.CSS">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="parent">
+        <video autoplay loop muted playsinline class="bg-video">
+            <source src="../videos/backgroundrain.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-background">
+
+        </div>
+        <h1>
+            Welcome to Montalban <br> tourist spot!
+        </h1>
+        <div class="container">
+            <div class="balagbag">
+                <img src="../images/balagbag.jpg" alt="Balagbag Mountain">        
+            </div>
+            <button class="next">
+                <img src="../images/nextw.png" alt="Next">
+            </button>
+        </div>
+        <div class="flash-background">
+        
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" autoplay loop>
+        <source src="../audio/musicbgcut.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!-- JavaScript to Enable Autoplay on User Interaction -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Autoplay Audio on Click
+            document.addEventListener("click", function() {
+                let audio = document.getElementById("bg-music");
+                if (audio.paused) {
+                    audio.play().catch(error => console.log("Autoplay blocked:", error));
+                }
+            });
+    
+            // Image Cycling Logic
+            const images = [
+                "../images/wawa1.jpg",
+                "../images/avilon.jpg",
+                "../images/balagbag.jpg"
+            ];
+            let currentIndex = 0;
+    
+            const imageElement = document.querySelector(".balagbag img");
+            const nextButton = document.querySelector(".next");
+            const flashBackground = document.querySelector(".flash-background");
+    
+            nextButton.addEventListener("click", function() {
+                currentIndex = (currentIndex + 1) % images.length; // Cycle through images
+                imageElement.src = images[currentIndex];
+    
+                // Move flash background above temporarily
+                flashBackground.style.zIndex = "1";
+                flashBackground.style.backgroundColor = "rgba(255, 255, 255, 1)"; // Full white
+    
+                setTimeout(() => {
+                    flashBackground.style.backgroundColor = "rgba(255, 255, 255, 0)"; // Fade back to transparent
+                }, 500);
+    
+                // Move flash background back after animation
+                setTimeout(() => {
+                    flashBackground.style.zIndex = "-1"; // Put it back behind content
+                }, 1000);
+            });
+        });
+    </script>
+    
+    
+</body>
+</html>  

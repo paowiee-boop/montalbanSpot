@@ -1,0 +1,163 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  /* Arranges content vertically */
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(228, 224, 224, 0.4);
+  /* White with 40% transparency */
+  padding: 20px;
+  border-radius: 10px;
+  /* Optional: Rounded corners */
+  width: fit-content;
+  /* Adjusts width to fit content */
+  gap: 35px;
+  /* Adds space between the elements */
+}
+
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  /* Ensures the video fills the screen */
+  z-index: -2;
+  /* Keeps video behind everything */
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  /* Dark transparent overlay */
+  z-index: -1;
+  /* Ensures it stays above the video but behind content */
+}
+
+
+.balagbag {
+  display: flex;
+  flex-direction: column;
+  /* Arrange content vertically */
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  /* Optional: Adds a border for visibility */
+  width: 45vw;
+  /* Increased width for a much wider appearance */
+  max-width: 100%;
+  /* Ensures it does not overflow */
+  aspect-ratio: 21 / 11;
+  /* Maintains ultra-wide proportions */
+  overflow: hidden;
+  /* Prevents image from overflowing */
+}
+
+.balagbag img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures the image fully fills the container */
+}
+
+.next {
+  width: 240px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  /* Makes the corners rounded */
+  overflow: hidden;
+  /* Ensures the image stays within the rounded shape */
+  box-shadow: -15px 10px 30px rgba(0, 0, 0, 0.8);
+  /* Wide, dark shadow on the left */
+  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Hover effect for an even more dramatic look */
+.next:hover {
+  box-shadow: -20px 15px 40px rgba(0, 0, 0, 1);
+  /* Extra dark, wider shadow */
+  transform: translateX(4px);
+  /* Slight move to the right for emphasis */
+}
+
+
+
+
+.next img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  font-family: 'Cinzel Decorative', cursive;
+  /* Majestic, fantasy-style font */
+  font-size: 20px;
+  /* Extra large for a grand effect */
+  font-weight: 700;
+  text-align: center;
+  color: #f8f8f8;
+  /* Golden color for a royal feel */
+  text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8),
+    0px 0px 15px rgba(255, 223, 0, 0.8);
+  /* Dark shadow + golden glow */
+  letter-spacing: 3px;
+  /* Enhances the elegant effect */
+  background: rgba(0, 0, 0, 0.3);
+  /* Subtle dark transparent background */
+  padding: 15px 30px;
+  border-radius: 12px;
+  /* Smooth rounded corners */
+  display: inline-block;
+}
+
+.flash-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0);
+  /* Start as fully transparent */
+  z-index: -1;
+  /* Push behind everything */
+  pointer-events: none;
+  /* Allow clicks to go through */
+  transition: background-color 1s ease-in-out;
+  /* Smooth transition effect */
+}
