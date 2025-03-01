@@ -43,12 +43,14 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Autoplay Audio on Click
-            document.addEventListener("click", function() {
-                let audio = document.getElementById("bg-music");
-                if (audio.paused) {
-                    audio.play().catch(error => console.log("Autoplay blocked:", error));
-                }
-            });
+            document.addEventListener("DOMContentLoaded", function () {
+    let audio = document.getElementById("bg-music");
+
+    // Start playback after a short delay
+    setTimeout(() => {
+        audio.play().catch(error => console.log("Autoplay blocked:", error));
+    }, 500);
+});
     
             // Image Cycling Logic
             const images = [
