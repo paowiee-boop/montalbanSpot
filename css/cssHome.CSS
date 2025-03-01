@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1px;
+  gap: 20px;
   overflow: hidden;
 }
 
@@ -89,40 +89,71 @@ body {
 }
 
 .next {
-  width: 240px;
-  height: 50px;
+  width: 220px;
+  height: 65px;
   border: none;
   cursor: pointer;
-  background-color: transparent;
-  padding: 0;
+  background: rgba(76, 175, 80, 0.8);
+  /* Semi-transparent green */
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Great Vibes', cursive;
+  /* Cursive font */
+  letter-spacing: 6.5px;
+  text-transform: none;
+  /* Remove uppercase for natural cursive feel */
+  padding: 12px 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 40px;
-  /* Makes the corners rounded */
+  border-radius: 35px;
+  /* Smooth, rounded shape */
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0px 10px 25px rgba(0, 255, 0, 0.3);
+  /* Green glow effect */
+  backdrop-filter: blur(5px);
+  /* Soft blur effect for depth */
+  position: relative;
   overflow: hidden;
-  /* Ensures the image stays within the rounded shape */
-  box-shadow: -15px 10px 30px rgba(0, 0, 0, 0.8);
-  /* Wide, dark shadow on the left */
-  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-/* Hover effect for an even more dramatic look */
+/* Subtle glowing pulse effect */
+.next::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease-out;
+  opacity: 0.7;
+}
+
+/* Hover effect */
 .next:hover {
-  box-shadow: -20px 15px 40px rgba(0, 0, 0, 1);
-  /* Extra dark, wider shadow */
-  transform: translateX(4px);
-  /* Slight move to the right for emphasis */
+  background: rgba(56, 142, 60, 0.9);
+  /* Slightly darker transparent green */
+  transform: translateY(-4px) scale(1.05);
+  /* Lift effect with slight scale */
+  box-shadow: 0px 12px 30px rgba(0, 255, 0, 0.5);
+  /* More intense glow */
 }
 
-
-
-
-.next img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* Hover glowing animation */
+.next:hover::before {
+  transform: translate(-50%, -50%) scale(1);
 }
+
+/* Active (click) effect */
+.next:active {
+  transform: translateY(2px) scale(0.98);
+  /* Slight push-down effect */
+  box-shadow: 0px 6px 15px rgba(0, 255, 0, 0.3);
+}
+
 
 h1 {
   font-family: 'Cinzel Decorative', cursive;
