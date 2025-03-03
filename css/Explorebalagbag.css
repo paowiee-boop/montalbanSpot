@@ -1,0 +1,26 @@
+body {
+    background-image: url(../images/mt.balagbagcover.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* header font */
+h1 {
+    color: black;
+    text-align: center;
+}
+
+p {
+    font-size: 1.5rem;
+    background-color: transparent;
+    margin: 1rem 0;
+    padding: 1rem;
+    text-align: center;
+
+/* color of the font */
+    color: black;
+    font-family: sans-serif;
+/* border */
+    
+}
